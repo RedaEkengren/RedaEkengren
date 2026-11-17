@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="sv" data-lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reda Ekengren · Linux, drift och fordonsteknik</title>
+<meta name="description" content="CV för Reda Ekengren: Linux- och driftstekniker i Stockholm med bakgrund som fordonstekniker el/hybrid. Erfarenhet, projekt, utbildning och kontakt.">
+<meta property="og:title" content="Reda Ekengren · Linux, drift och fordonsteknik">
+<meta property="og:description" content="Linux- och driftstekniker med bakgrund som fordonstekniker el/hybrid. Erfarenhet, projekt och utbildning.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="reda.webp">
+<link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+(function () {
+  var l;
+  try { l = localStorage.getItem("cv-lang"); } catch (e) {}
+  if (!l) l = (navigator.language || "sv").toLowerCase().indexOf("sv") === 0 ? "sv" : "en";
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l;
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Reda Ekengren",
+  "jobTitle": "Linux- och driftstekniker",
+  "email": "redaekengren@protonmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Stockholm", "addressCountry": "SE" },
+  "worksFor": { "@type": "Organization", "name": "Benbo", "url": "https://benbo.se" },
+  "alumniOf": [
+    { "@type": "EducationalOrganization", "name": "EC Utbildning" },
+    { "@type": "EducationalOrganization", "name": "YrkesAkademin Yrkeshögskola" }
+  ],
+  "knowsLanguage": ["sv", "en", "ar"],
+  "sameAs": [
+    "https://github.com/RedaEkengren",
+    "https://github.com/Benbo-se",
+    "https://www.linkedin.com/in/reda-karl-ekengren-b2a05623b/"
+  ]
+}
+</script>
+<style>
+@font-face { font-family: "Inter"; src: url("fonts/inter-latin.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url("fonts/space-grotesk-latin.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("fonts/jetbrains-mono-latin.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
+
+:root {
+  --paper: #f5f2ea;
+  --paper-2: #ece8dc;
+  --card: #fbf9f4;
+  --ink: #0f1b2d;
+  --ink-2: #44505f;
+  --ink-3: #6b7480;
+  --rule: #d8d2c2;
+  --line-it: #1f5fbf;
+  --line-f: #b9790a;
+  --line-f-soft: #f0d9a8;
+  --line-it-soft: #c9dcf6;
+  --accent: #b9790a;
+  --hero-bg: #0f1b2d;
+  --hero-ink: #f5f2ea;
+  --hero-dim: #9fabba;
+  --hero-rule: #26354b;
+  --gold: #e9b44c;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --head: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --wrap: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0b1320;
+    --paper-2: #101a2b;
+    --card: #121d30;
+    --ink: #eef0ee;
+    --ink-2: #b4bcc8;
+    --ink-3: #8691a0;
+    --rule: #223049;
+    --line-it: #6aa5ff;
+    --line-f: #e9b44c;
+    --line-f-soft: #4a3a14;
+    --line-it-soft: #1b3358;
+    --accent: #e9b44c;
+    --hero-bg: #070d17;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+html[data-lang="sv"] .en, html[data-lang="en"] .sv { display: none !important; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--head); letter-spacing: -0.025em; line-height: 1.1; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+.mono { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- top bar ---------- */
+.bar {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--hero-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hero-rule);
+  color: var(--hero-ink);
+}
+.bar .wrap { display: flex; align-items: center; gap: 20px; height: 56px; }
+.bar .id { font-family: var(--head); font-weight: 600; letter-spacing: -0.02em; text-decoration: none; margin-right: auto; }
+.bar .id b { color: var(--gold); font-weight: 600; }
+.bar nav { display: flex; gap: 22px; }
+.bar nav a { text-decoration: none; color: var(--hero-dim); font-size: 0.9rem; padding: 8px 0; }
+.bar nav a:hover { color: var(--hero-ink); }
+.lang { display: flex; border: 1px solid var(--hero-rule); border-radius: 999px; padding: 2px; }
+.lang button {
+  font: inherit; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
+  color: var(--hero-dim); background: none; border: 0; border-radius: 999px;
+  padding: 6px 11px; cursor: pointer;
+}
+html[data-lang="sv"] .lang [data-set="sv"], html[data-lang="en"] .lang [data-set="en"] { background: var(--gold); color: #0f1b2d; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--hero-bg); color: var(--hero-ink); position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--hero-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-rule) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 90% 80% at 75% 20%, #000 10%, transparent 75%);
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-top: 72px; padding-bottom: 80px; }
+.hero .eyebrow { color: var(--gold); display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.hero .eyebrow i { width: 5px; height: 5px; border-radius: 50%; background: var(--hero-dim); display: inline-block; }
+.hero h1 { font-size: clamp(3rem, 8.4vw, 6.4rem); font-weight: 600; letter-spacing: -0.045em; line-height: 0.95; margin: 22px 0 28px; }
+.hero h1 span { display: block; }
+.hero .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.5; color: #d6dbe2; max-width: 34em; }
+.hero .lede strong { color: var(--hero-ink); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px; min-height: 46px; padding: 0 20px;
+  border-radius: 999px; border: 1px solid var(--hero-rule); color: var(--hero-ink);
+  text-decoration: none; font-weight: 500; font-size: 0.95rem; background: none; font-family: inherit; cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.btn:hover { border-color: var(--gold); color: var(--gold); }
+.btn.primary { background: var(--gold); border-color: var(--gold); color: #0f1b2d; font-weight: 600; }
+.btn.primary:hover { background: #f3c66a; color: #0f1b2d; }
+.btn svg { width: 17px; height: 17px; flex: none; }
+
+.portrait { position: relative; max-width: 380px; justify-self: end; width: 100%; }
+.portrait::before { content: ""; position: absolute; inset: -14px; border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); border-radius: 30px; transform: rotate(-3deg); }
+.portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; background: #1a2740; }
+.portrait figcaption {
+  position: absolute; left: -18px; bottom: 26px; background: var(--hero-ink); color: #0f1b2d;
+  padding: 9px 14px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.portrait figcaption b { display: block; font-family: var(--head); font-size: 0.98rem; letter-spacing: -0.01em; }
+.portrait figcaption .mono { font-size: 0.64rem; color: #5a6472; }
+
+/* ---------- plate (stats) ---------- */
+.plate { background: var(--hero-bg); color: var(--hero-ink); border-top: 1px solid var(--hero-rule); }
+.plate .wrap { display: grid; grid-template-columns: repeat(5, 1fr); }
+.plate .wrap > div { padding: 26px 20px 28px 0; }
+.plate .wrap > div + div { border-left: 1px solid var(--hero-rule); padding-left: 20px; }
+.plate b { display: block; font-family: var(--head); font-weight: 600; font-size: clamp(1.6rem, 2.6vw, 2.3rem); letter-spacing: -0.03em; line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
+.plate .wrap > div > span { display: block; margin-top: 10px; font-size: 0.86rem; line-height: 1.4; color: var(--hero-dim); }
+
+/* ---------- sections ---------- */
+section { padding: 96px 0; }
+section.alt { background: var(--paper-2); }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 40px; align-items: end; margin-bottom: 56px; }
+.head .mono { color: var(--accent); display: block; margin-bottom: 14px; }
+.head h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); font-weight: 600; overflow-wrap: break-word; }
+.head p { color: var(--ink-2); font-size: 1.06rem; max-width: 36em; }
+
+/* ---------- line map ---------- */
+.legend { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-bottom: 36px; }
+.legend span { display: inline-flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--ink-2); }
+.legend i { width: 30px; height: 5px; border-radius: 3px; display: inline-block; }
+.legend .f i, .badge.f { background: var(--line-f); }
+.legend .it i, .badge.it { background: var(--line-it); }
+.legend .edu i { width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink-3); }
+section.alt .legend .edu i { background: var(--paper-2); }
+
+.map { list-style: none; margin: 0; padding: 0; }
+.stop { display: grid; grid-template-columns: 104px 34px 34px minmax(0, 1fr); column-gap: 0; }
+.stop .yr { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-3); padding-top: 25px; letter-spacing: 0.02em; white-space: nowrap; }
+.trk { position: relative; }
+.trk.on::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 5px; margin-left: -2.5px; background: var(--c); }
+.trk.term::before { bottom: auto; height: 36px; border-radius: 0 0 3px 3px; }
+.trk.dot::after {
+  content: ""; position: absolute; left: 50%; top: 26px; width: 19px; height: 19px; margin-left: -9.5px;
+  border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px var(--bg);
+}
+.trk.ring::after { background: var(--bg); border: 4px solid var(--c); }
+.trk.f { --c: var(--line-f); }
+.trk.it { --c: var(--line-it); }
+.map { --bg: var(--paper); }
+section.alt .map { --bg: var(--paper-2); }
+.now { display: grid; grid-template-columns: 104px 34px 34px minmax(0, 1fr); height: 44px; }
+.now .yr { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); align-self: end; padding-bottom: 6px; letter-spacing: 0.08em; text-transform: uppercase; }
+.now .trk.on::before { top: 12px; }
+.now .trk.on::after {
+  content: ""; position: absolute; left: 50%; top: 0; margin-left: -8px;
+  border: 8px solid transparent; border-bottom: 13px solid var(--c); border-top: 0;
+}
+.stop .body { padding: 16px 0 34px 22px; border-top: 1px solid var(--rule); margin-left: 12px; }
+.stop:first-of-type .body { border-top: 0; }
+.stop h3 { font-size: 1.32rem; font-weight: 600; }
+.stop .where { color: var(--ink-2); margin-top: 3px; font-size: 0.98rem; }
+.stop .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.badge { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; padding: 3px 8px; border-radius: 4px; }
+@media (prefers-color-scheme: dark) { .badge { color: #0b1320; } }
+.kind { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.yr-m { display: none; font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); margin-left: auto; }
+.stop ul { margin: 12px 0 0; padding: 0; list-style: none; color: var(--ink-2); font-size: 0.98rem; max-width: 46em; }
+.stop li { position: relative; padding-left: 18px; margin-top: 6px; }
+.stop li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--ink-3); }
+.stop li b, .stop p b { color: var(--ink); font-weight: 600; }
+.stop .body > p.txt { margin-top: 12px; color: var(--ink-2); font-size: 0.98rem; max-width: 46em; }
+
+/* ---------- projects ---------- */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.more { margin-top: 28px; color: var(--ink-2); font-size: 0.98rem; line-height: 1.9; }
+.more .mono { color: var(--accent); margin-right: 12px; }
+.more a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+.more a:hover { text-decoration-color: var(--accent); }
+.proj {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 24px;
+  display: flex; flex-direction: column; text-decoration: none; position: relative;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+a.proj:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 14px 34px -18px rgba(15, 27, 45, .45); }
+.proj.wide { grid-column: span 2; }
+.proj.full { grid-column: 1 / -1; }
+.proj.full p { max-width: 62em; }
+.proj .tag { color: var(--accent); margin-bottom: 14px; display: flex; justify-content: space-between; gap: 10px; }
+.proj .tag span:last-child { color: var(--ink-3); }
+.proj h3 { font-size: 1.45rem; font-weight: 600; }
+.proj p { color: var(--ink-2); margin-top: 10px; font-size: 0.97rem; }
+.proj .fact { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 0.92rem; color: var(--ink); }
+.proj .stack { margin-top: auto; padding-top: 18px; font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); line-height: 1.7; }
+.proj .go { position: absolute; right: 20px; bottom: 20px; width: 18px; height: 18px; color: var(--ink-3); transition: transform .18s, color .18s; }
+a.proj:hover .go { transform: translate(2px, -2px); color: var(--accent); }
+.proj .stack { padding-right: 30px; }
+
+/* ---------- skills ---------- */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+.skill { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 20px; padding: 20px 0; border-top: 1px solid var(--rule); }
+.skill .mono { color: var(--accent); padding-top: 5px; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; align-content: flex-start; align-items: flex-start; }
+.chips span { font-size: 0.88rem; padding: 4px 11px; border: 1px solid var(--rule); border-radius: 999px; background: var(--card); white-space: nowrap; }
+.chips span span { border: 0; padding: 0; background: none; font-size: inherit; }
+
+/* ---------- education ---------- */
+.edu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.dip { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 28px; border-top: 5px solid var(--c); }
+.dip.it { --c: var(--line-it); }
+.dip.f { --c: var(--line-f); }
+.dip .mono { color: var(--ink-3); }
+.dip h3 { font-size: 1.5rem; font-weight: 600; margin: 10px 0 6px; }
+.dip .school { color: var(--ink-2); }
+.dip .sum { display: flex; gap: 26px; margin: 20px 0 4px; }
+.dip .sum b { display: block; font-family: var(--head); font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.1; }
+.dip .sum span { font-size: 0.82rem; color: var(--ink-3); }
+.dip table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.9rem; }
+.dip th { text-align: left; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 400; padding: 0 0 8px; }
+.dip td { padding: 7px 0; border-top: 1px solid var(--rule); color: var(--ink-2); }
+.dip td:nth-child(2), .dip th:nth-child(2) { text-align: right; width: 54px; font-variant-numeric: tabular-nums; }
+.dip td:nth-child(3), .dip th:nth-child(3) { text-align: right; width: 54px; }
+.dip td:nth-child(3) { font-family: var(--mono); font-size: 0.78rem; color: var(--ink); }
+.dip .note { margin-top: 14px; font-size: 0.82rem; color: var(--ink-3); }
+
+/* ---------- quotes ---------- */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.quotes figure { margin: 0; padding: 0 0 0 24px; border-left: 3px solid var(--accent); }
+.quotes blockquote { margin: 0; font-family: var(--head); font-size: 1.22rem; line-height: 1.4; letter-spacing: -0.015em; }
+.quotes figcaption { margin-top: 16px; font-size: 0.9rem; color: var(--ink-2); }
+.quotes figcaption b { color: var(--ink); }
+
+.extras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; margin-top: 64px; }
+
+/* ---------- contact ---------- */
+.contact { background: var(--hero-bg); color: var(--hero-ink); padding: 96px 0 40px; }
+.contact h2 { font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 600; letter-spacing: -0.04em; max-width: 14em; }
+.contact h2 em { font-style: normal; color: var(--gold); }
+.contact .lede { color: var(--hero-dim); margin-top: 20px; max-width: 34em; font-size: 1.08rem; }
+.links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 52px; border-top: 1px solid var(--hero-rule); }
+.links a { padding: 22px 20px 22px 0; text-decoration: none; border-bottom: 1px solid var(--hero-rule); }
+.links a + a { padding-left: 20px; border-left: 1px solid var(--hero-rule); }
+.links .mono { color: var(--hero-dim); display: block; margin-bottom: 6px; }
+.links b { font-family: var(--head); font-weight: 500; font-size: 0.94rem; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.links a:hover b { color: var(--gold); }
+.foot { margin-top: 44px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; color: var(--hero-dim); font-size: 0.82rem; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 48px; padding-top: 48px; padding-bottom: 64px; }
+  .portrait { justify-self: start; max-width: 300px; margin-left: 14px; }
+  .plate .wrap { grid-template-columns: repeat(2, 1fr); }
+  .plate .wrap > div, .plate .wrap > div + div { padding: 20px 16px 20px 0; border-left: 0; border-top: 1px solid var(--hero-rule); }
+  .plate .wrap > div:nth-child(-n+2) { border-top: 0; }
+  .plate .wrap > div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--hero-rule); }
+  .plate .wrap > div:last-child { grid-column: span 2; }
+  .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills, .edu-grid, .quotes, .extras { grid-template-columns: 1fr; }
+  .links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .links a:nth-child(3) { padding-left: 0; border-left: 0; }
+  section { padding: 72px 0; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  .bar nav { display: none; }
+  .stop, .now { grid-template-columns: 26px 26px minmax(0, 1fr); }
+  .stop > .yr, .now > .yr { display: none; }
+  .yr-m { display: inline; }
+  .stop .body { padding-left: 14px; margin-left: 8px; }
+  .grid { grid-template-columns: 1fr; }
+  .proj.wide, .proj.full { grid-column: auto; }
+  .skill { grid-template-columns: 1fr; gap: 10px; }
+  .links { grid-template-columns: 1fr; }
+  .links a, .links a + a { padding-left: 0; border-left: 0; }
+  .portrait figcaption { left: -10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- print: a clean paper CV ---------- */
+@media print {
+  :root {
+    --paper: #fff; --paper-2: #fff; --card: #fff; --ink: #111; --ink-2: #333; --ink-3: #666; --rule: #ccc;
+    --line-it: #1f5fbf; --line-f: #b9790a; --accent: #8a5a05;
+    --hero-bg: #fff; --hero-ink: #111; --hero-dim: #555; --hero-rule: #ccc; --gold: #8a5a05;
+  }
+  @page { margin: 14mm; }
+  body { font-size: 10.5pt; }
+  .bar, .cta, .hero::before, .portrait::before, .portrait figcaption, .go, .foot .noprint { display: none !important; }
+  .hero .wrap { grid-template-columns: 1fr 34mm; gap: 10mm; padding: 0 0 6mm; }
+  .hero h1 { font-size: 30pt; margin: 3mm 0 4mm; }
+  .hero h1 span { display: inline; }
+  .hero .lede { color: #333; font-size: 10.5pt; }
+  .hero .lede strong { color: #111; }
+  .portrait img { border-radius: 4mm; }
+  .plate .wrap > div { padding: 3mm 3mm 3mm 0; }
+  .plate b { font-size: 15pt; }
+  section, .contact { padding: 7mm 0 0; }
+  .head { margin-bottom: 4mm; grid-template-columns: 1fr; gap: 1mm; }
+  .head h2 { font-size: 16pt; }
+  .head p { display: none; }
+  .stop, .proj, .dip, .skill, .quotes figure { break-inside: avoid; }
+  .stop .body { padding-bottom: 4mm; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 3mm; }
+  .proj.wide { grid-column: auto; }
+  .proj, .dip { padding: 4mm; border-radius: 3mm; }
+  .contact h2 { font-size: 16pt; }
+  .links { margin-top: 4mm; }
+  .links a { padding: 3mm 3mm 3mm 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="id" href="#top">Reda Ekengren<b>.</b></a>
+    <nav aria-label="Sektioner">
+      <a href="#linjekarta"><span class="sv">Erfarenhet</span><span class="en">Experience</span></a>
+      <a href="#projekt"><span class="sv">Projekt</span><span class="en">Projects</span></a>
+      <a href="#kompetens"><span class="sv">Kompetens</span><span class="en">Skills</span></a>
+      <a href="#utbildning"><span class="sv">Utbildning</span><span class="en">Education</span></a>
+      <a href="#kontakt"><span class="sv">Kontakt</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Språk / Language">
+      <button type="button" data-set="sv" aria-label="Svenska">SV</button>
+      <button type="button" data-set="en" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="mono eyebrow">
+        <span>Linux</span><i></i><span>Cloud Operations</span><i></i>
+        <span class="sv">Fordonstekniker el/hybrid</span><span class="en">EV/hybrid vehicle technician</span><i></i>
+        <span>Stockholm</span>
+      </p>
+      <h1><span>Reda</span><span>Ekengren</span></h1>
+      <p class="lede sv">
+        Jag driftar, övervakar och felsöker system i produktion. <strong>Först tunga fordon med högspänning, i dag Linux-servrar, CI/CD och databaser.</strong>
+        Arbetssättet är detsamma: mät innan du drar slutsatser, dokumentera rutinen och testa återställningen på riktigt.
+      </p>
+      <p class="lede en">
+        I run, monitor and troubleshoot systems in production. <strong>First heavy vehicles with high voltage, today Linux servers, CI/CD and databases.</strong>
+        The method is the same: measure before you conclude, document the routine, and test the restore for real.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:redaekengren@protonmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          redaekengren@protonmail.com
+        </a>
+        <a class="btn" href="https://github.com/RedaEkengren" rel="me noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.600-4-1.600-.6-1.400-1.400-1.800-1.400-1.800-1.100-.7.1-.7.1-.7 1.200.1 1.900 1.200 1.900 1.200 1.100 1.800 2.800 1.300 3.500 1 .1-.8.4-1.300.8-1.600-2.700-.3-5.500-1.300-5.500-5.900 0-1.300.5-2.400 1.200-3.200-.1-.3-.5-1.500.1-3.200 0 0 1-.3 3.300 1.200a11.500 11.500 0 0 1 6 0C17.300 4.700 18.300 5 18.300 5c.6 1.700.2 2.900.1 3.200.8.800 1.200 1.900 1.200 3.200 0 4.600-2.800 5.600-5.500 5.900.4.400.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/reda-karl-ekengren-b2a05623b/" rel="me noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.980 3.500a2.500 2.500 0 1 1 0 5 2.500 2.500 0 0 1 0-5ZM3 9.750h4V21H3V9.750Zm6.500 0h3.800v1.600h.1c.5-1 1.800-1.900 3.700-1.900 4 0 4.700 2.600 4.700 6V21h-4v-4.900c0-1.200 0-2.700-1.700-2.700s-1.900 1.300-1.900 2.600V21h-4V9.750Z"/></svg>
+          LinkedIn
+        </a>
+        <button class="btn" type="button" id="print">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span class="sv">Spara som PDF</span><span class="en">Save as PDF</span>
+        </button>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="reda.webp" width="800" height="999" alt="Porträtt av Reda Ekengren">
+      <figcaption>
+        <b>Reda Ekengren</b>
+        <span class="mono"><span class="sv">Grundare, Benbo</span><span class="en">Founder, Benbo</span></span>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="plate" aria-label="Nyckeltal">
+  <div class="wrap">
+    <div><b>73 s</b>
+      <span class="sv">att återställa en produktionsdatabas på 5 GB, i ett genomfört test</span>
+      <span class="en">to restore a 5 GB production database, in a completed drill</span></div>
+    <div><b><span class="sv">2+ år</span><span class="en">2+ yrs</span></b>
+      <span class="sv">med Linux i produktion: drift, patchning, övervakning och felsökning</span>
+      <span class="en">of Linux in production: operations, patching, monitoring and troubleshooting</span></div>
+    <div><b>680+</b>
+      <span class="sv">automatiska tester i Argusmetrics, som körs i CI före varje release</span>
+      <span class="en">automated tests in Argusmetrics, run in CI before every release</span></div>
+    <div><b>8 / 9</b>
+      <span class="sv">kurser med högsta betyg i YH-examen som Cloud- och infrastrukturspecialist</span>
+      <span class="en">courses with top grade in my Cloud and Infrastructure Specialist diploma</span></div>
+    <div><b><span class="sv">10 år</span><span class="en">10 yrs</span></b>
+      <span class="sv">skiftarbete på nätter och helger i Stockholms kollektivtrafik</span>
+      <span class="en">of night and weekend shifts in Stockholm public transport</span></div>
+  </div>
+</div>
+
+<section id="linjekarta">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono"><span class="sv">Erfarenhet</span><span class="en">Experience</span></span>
+        <h2><span class="sv">Två linjer, samma felsökare</span><span class="en">Two lines, one troubleshooter</span></h2>
+      </div>
+      <p class="sv">Min karriär går på två spår som i dag löper parallellt. Fordonslinjen startade i Stockholmstrafiken 2012. IT-linjen öppnade 2024 och är dit jag är på väg.</p>
+      <p class="en">My career runs on two tracks that are parallel today. The vehicle line started in Stockholm transit in 2012. The IT line opened in 2024 and is where I am heading.</p>
+    </div>
+
+    <div class="legend">
+      <span class="it"><i></i><span class="sv">IT-linjen: drift, moln och utveckling</span><span class="en">IT line: operations, cloud and development</span></span>
+      <span class="f"><i></i><span class="sv">Fordonslinjen: verkstad och kollektivtrafik</span><span class="en">Vehicle line: workshop and public transport</span></span>
+      <span class="edu"><i></i><span class="sv">Utbildning</span><span class="en">Education</span></span>
+    </div>
+
+    <div class="now" aria-hidden="true">
+      <span class="yr"><span class="sv">Nu</span><span class="en">Now</span></span>
+      <span class="trk it on"></span><span class="trk f on"></span><span></span>
+    </div>
+    <ol class="map">
+
+      <li class="stop">
+        <span class="yr"><span class="sv">2025-nu</span><span class="en">2025-now</span></span>
+        <span class="trk it on dot"></span><span class="trk f on"></span>
+        <div class="body">
+          <div class="meta"><span class="badge it">IT</span><span class="kind"><span class="sv">Konsultuppdrag, distans</span><span class="en">Contract, remote</span></span><span class="yr-m"><span class="sv">2025-nu</span><span class="en">2025-now</span></span></div>
+          <h3><span class="sv">IT-konsult, drift och leverans</span><span class="en">IT consultant, operations and delivery</span></h3>
+          <p class="where">Blitz KSA, Riyadh</p>
+          <ul class="sv">
+            <li>Utvecklade i teamets Google Cloud-miljö: <b>Compute Engine, Cloud SQL, Secret Manager och Terraform</b>.</li>
+            <li>Leveranser via teamets CI/CD i GitHub Actions med Docker och säkerhetsskanning (Trivy, gitleaks).</li>
+            <li>Projekt: Ghaseeli (realtid och AI-röst), SaudiDomains (.sa-registrar) och AI-tjänster med OpenAI.</li>
+          </ul>
+          <ul class="en">
+            <li>Developed in the team's Google Cloud environment: <b>Compute Engine, Cloud SQL, Secret Manager and Terraform</b>.</li>
+            <li>Deliveries through the team's CI/CD in GitHub Actions with Docker and security scanning (Trivy, gitleaks).</li>
+            <li>Projects: Ghaseeli (realtime and AI voice), SaudiDomains (.sa registrar) and AI services with OpenAI.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr">2025-2026</span>
+        <span class="trk it on dot"></span><span class="trk f on"></span>
+        <div class="body">
+          <div class="meta"><span class="badge it">IT</span><span class="kind"><span class="sv">Praktik, distans</span><span class="en">Internship, remote</span></span><span class="yr-m">2025-2026</span></div>
+          <h3><span class="sv">Praktikant, molninfrastruktur</span><span class="en">Intern, cloud infrastructure</span></h3>
+          <p class="where">Yallawayn, UK</p>
+          <p class="txt sv">Byggde AI-drivna arbetsflöden med LLM-integrationer och bidrog med infrastruktur- och driftstöd.</p>
+          <p class="txt en">Built AI-driven workflows with LLM integrations and contributed infrastructure and operations support.</p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr"><span class="sv">2024-nu</span><span class="en">2024-now</span></span>
+        <span class="trk it on dot"></span><span class="trk f on"></span>
+        <div class="body">
+          <div class="meta"><span class="badge it">IT</span><span class="kind"><span class="sv">Eget bolag</span><span class="en">Own company</span></span><span class="yr-m"><span class="sv">2024-nu</span><span class="en">2024-now</span></span></div>
+          <h3><span class="sv">Grundare och IT-konsult</span><span class="en">Founder and IT consultant</span></h3>
+          <p class="where">Benbo, Stockholm</p>
+          <ul class="sv">
+            <li><b>Plattform som kod</b> med egen teknisk standard (BenboStandard): Terraform för GitHub med branch protection på 40+ repon i drift, testade Ansible-roller och återanvändbara GitHub Actions-workflows.</li>
+            <li><b>Egen övervakning</b> av TLS/SNI, certifikat, åtkomst och jobbhälsa, med larm som öppnar incidentärenden automatiskt.</li>
+            <li><b>Backup och DR</b> med genomförda återställningstester: 5 GB produktionsdatabas återställd på 73 sekunder.</li>
+            <li><b>Argusmetrics</b>, öppen källkod: FastAPI, TimescaleDB, row-level security, 680+ tester och CI till GHCR.</li>
+            <li>Kundplattformar från krav till drift: Alkama, TrackOne.se och SaaS-tjänsten BraLeads.ai (635 000+ företag).</li>
+          </ul>
+          <ul class="en">
+            <li><b>Platform as code</b> with an in-house technical standard (BenboStandard): Terraform for GitHub with branch protection on 40+ repos in production, tested Ansible roles and reusable GitHub Actions workflows.</li>
+            <li><b>Own monitoring</b> of TLS/SNI, certificates, access and job health, with alerts that open incident tickets automatically.</li>
+            <li><b>Backup and DR</b> with completed restore drills: a 5 GB production database restored in 73 seconds.</li>
+            <li><b>Argusmetrics</b>, open source: FastAPI, TimescaleDB, row-level security, 680+ tests and CI to GHCR.</li>
+            <li>Client platforms from requirements to operations: Alkama, TrackOne.se and the BraLeads.ai SaaS (635,000+ companies).</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr">2024-2026</span>
+        <span class="trk it on term dot ring"></span><span class="trk f on"></span>
+        <div class="body">
+          <div class="meta"><span class="badge it">IT</span><span class="kind"><span class="sv">Utbildning, YH 420 p</span><span class="en">Education, 420 HVE credits</span></span><span class="yr-m">2024-2026</span></div>
+          <h3><span class="sv">Cloud- och infrastrukturspecialist</span><span class="en">Cloud and Infrastructure Specialist</span></h3>
+          <p class="where">EC Utbildning</p>
+          <p class="txt sv">Yrkeshögskoleexamen 2026. Molntjänster, Linux, nätverk, virtualisering och IT-säkerhet. <b>VG i 8 av 9 kurser.</b></p>
+          <p class="txt en">Higher Vocational Education Diploma 2026. Cloud services, Linux, networking, virtualisation and IT security. <b>Pass with distinction in 8 of 9 courses.</b></p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr"><span class="sv">2023-nu</span><span class="en">2023-now</span></span>
+        <span class="trk it"></span><span class="trk f on dot"></span>
+        <div class="body">
+          <div class="meta"><span class="badge f"><span class="sv">Fordon</span><span class="en">Vehicle</span></span><span class="kind"><span class="sv">Anställning</span><span class="en">Employment</span></span><span class="yr-m"><span class="sv">2023-nu</span><span class="en">2023-now</span></span></div>
+          <h3><span class="sv">Mekaniker och tekniker, tunga fordon</span><span class="en">Mechanic and technician, heavy vehicles</span></h3>
+          <p class="where">Nobina, Kallhäll</p>
+          <ul class="sv">
+            <li>Service, reparation, renovering och <b>systematisk felsökning med diagnosverktyg</b> på tunga fordon (Volvo B8 och Scania), inklusive el, elektronik, akuta jobb och MIG-svetsning.</li>
+            <li>Arbetsledande ansvar under semesterperioder. Dokumenterar arbetet i digitala arbetsordersystem.</li>
+          </ul>
+          <ul class="en">
+            <li>Service, repair, refurbishment and <b>systematic troubleshooting with diagnostic tools</b> on heavy vehicles (Volvo B8 and Scania), including electrics, electronics, urgent jobs and MIG welding.</li>
+            <li>Acting supervisor during holiday periods. Documents the work in digital work order systems.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr">2022-2023</span>
+        <span class="trk it"></span><span class="trk f on dot"></span>
+        <div class="body">
+          <div class="meta"><span class="badge f"><span class="sv">Fordon</span><span class="en">Vehicle</span></span><span class="kind"><span class="sv">Anställning</span><span class="en">Employment</span></span><span class="yr-m">2022-2023</span></div>
+          <h3><span class="sv">Mekaniker</span><span class="en">Mechanic</span></h3>
+          <p class="where">VR Sverige / Nobina</p>
+          <p class="txt sv">Service, besiktning, reparation och MIG-svetsning på tunga fordon.</p>
+          <p class="txt en">Service, inspection, repair and MIG welding on heavy vehicles.</p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr">2020-2022</span>
+        <span class="trk it"></span><span class="trk f on dot ring"></span>
+        <div class="body">
+          <div class="meta"><span class="badge f"><span class="sv">Fordon</span><span class="en">Vehicle</span></span><span class="kind"><span class="sv">Utbildning, YH 300 p</span><span class="en">Education, 300 HVE credits</span></span><span class="yr-m">2020-2022</span></div>
+          <h3><span class="sv">Kvalificerad fordonstekniker el/hybrid</span><span class="en">Qualified EV/hybrid vehicle technician</span></h3>
+          <p class="where">YrkesAkademin Yrkeshögskola</p>
+          <p class="txt sv">Yrkeshögskoleexamen 2022. Fördjupning inom el och elektronik, högspänning, elsäkerhet, elektroniska styrsystem och diagnos. <b>VG i 8 av 9 kurser.</b></p>
+          <p class="txt en">Higher Vocational Education Diploma 2022. Focus on electrics and electronics, high voltage, electrical safety, electronic control systems and diagnostics. <b>Pass with distinction in 8 of 9 courses.</b></p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <span class="yr">2012-2022</span>
+        <span class="trk it"></span><span class="trk f on term dot"></span>
+        <div class="body">
+          <div class="meta"><span class="badge f"><span class="sv">Trafik</span><span class="en">Transit</span></span><span class="kind"><span class="sv">Anställning</span><span class="en">Employment</span></span><span class="yr-m">2012-2022</span></div>
+          <h3>Nattflex</h3>
+          <p class="where">Keolis, Stockholm</p>
+          <ul class="sv">
+            <li>Flexibel nattroll som resurs åt trafikledningen vid störningar.</li>
+            <li>Enklare felavhjälpning på fordon, till exempel återställning av dörrsystem. Tio års skiftarbete på nätter, kvällar och helger.</li>
+          </ul>
+          <ul class="en">
+            <li>Flexible night role as a resource for traffic control during disruptions.</li>
+            <li>First-line fault clearing on vehicles, such as resetting door systems. Ten years of shift work on nights, evenings and weekends.</li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<section id="projekt" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono"><span class="sv">Projekt</span><span class="en">Projects</span></span>
+        <h2><span class="sv">Saker jag har byggt och driftar</span><span class="en">Things I have built and run</span></h2>
+      </div>
+      <p class="sv">Fem som visar hur jag bygger och driftar. Alla är i produktion och alla har jag själv tagit från första raden till drift.</p>
+      <p class="en">Five that show how I build and operate. All are in production, and I took every one of them from the first line to operations myself.</p>
+    </div>
+
+    <div class="grid">
+      <a class="proj full" href="https://github.com/Benbo-se/benbo-workflows" rel="noopener">
+        <div class="mono tag"><span class="sv">Plattform</span><span class="en">Platform</span><span><span class="sv">I drift</span><span class="en">In production</span></span></div>
+        <h3><span class="sv">Benbo-plattformen</span><span class="en">The Benbo platform</span></h3>
+        <p class="sv">Allt jag driftar följer en egen skriven standard, BenboStandard. Ett register över alla projekt driver övervakningen: TLS-handskakning med SNI, certifikatens utgång, åtkomst och jobbhälsa. Ett fel öppnar ett ärende, och ärendet stängs när felet är borta.</p>
+        <p class="en">Everything I operate follows a written standard of my own, BenboStandard. A registry of every project drives the monitoring: TLS handshake with SNI, certificate expiry, reachability and job health. A failure opens one ticket, and the ticket closes when the failure is gone.</p>
+        <p class="fact sv">Branch protection på 40+ repon styrs med Terraform, serverroller i Ansible. De återanvändbara GitHub Actions-workflowsen är publika, länken går dit.</p>
+        <p class="fact en">Branch protection on 40+ repos is managed with Terraform, server roles in Ansible. The reusable GitHub Actions workflows are public, and the link goes there.</p>
+        <div class="stack">Terraform · Ansible · GitHub Actions · Python · Bash</div>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+
+      <a class="proj" href="https://braleads.ai" rel="noopener">
+        <div class="mono tag"><span class="sv">Eget SaaS</span><span class="en">Own SaaS</span><span>2025-2026</span></div>
+        <h3>BraLeads</h3>
+        <p class="sv">Sökbar katalog över svenska aktiebolag, byggd på data från SCB, Bolagsverket och bolagens egna hemsidor.</p>
+        <p class="en">Searchable catalogue of Swedish limited companies, built on data from Statistics Sweden, the Companies Registration Office and the companies' own websites.</p>
+        <p class="fact sv">635 000+ företag. Sex containrar bakom nginx, deploy först efter grön CI.</p>
+        <p class="fact en">635,000+ companies. Six containers behind nginx, deploys only after green CI.</p>
+        <div class="stack">Django · PostgreSQL · Redis · Celery · Stripe</div>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+
+      <a class="proj" href="https://github.com/Benbo-se/ArgusmetricsSH" rel="noopener">
+        <div class="mono tag"><span class="sv">Öppen källkod</span><span class="en">Open source</span><span>AGPL-3.0</span></div>
+        <h3>Argusmetrics</h3>
+        <p class="sv">Webbanalys utan cookies som du kör själv. Ett skript på 3,1 KB ger realtidsdashboard, mål, trattar och e-handelsrapporter, utan samtyckesbanner och utan att besökarens IP-adress skickas någonstans.</p>
+        <p class="en">Cookieless web analytics you run yourself. A 3.1 KB script gives real-time dashboards, goals, funnels and ecommerce reporting, with no consent banner and without sending a visitor's IP address anywhere.</p>
+        <p class="fact sv">680+ tester, row-level security i databasen, CI som bygger och publicerar till GHCR.</p>
+        <p class="fact en">680+ tests, row-level security in the database, CI that builds and publishes to GHCR.</p>
+        <div class="stack">FastAPI · TimescaleDB · PostgreSQL · Docker · GitHub Actions</div>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+
+      <a class="proj" href="https://alkamaindustry.com" rel="noopener">
+        <div class="mono tag"><span class="sv">Kunduppdrag</span><span class="en">Client work</span><span>2026</span></div>
+        <h3>Alkama Industry</h3>
+        <p class="sv">Skräddarsydd B2B-portal för en kemikalietillverkare: publik sajt, inloggad kundportal och adminpanel i ett system.</p>
+        <p class="en">Custom B2B portal for a chemicals manufacturer: public site, logged-in customer portal and admin panel in one system.</p>
+        <p class="fact sv">4 språk, 3 länder, EU-lagring med dagliga backuper.</p>
+        <p class="fact en">4 languages, 3 countries, EU hosting with daily backups.</p>
+        <div class="stack">TanStack Start · PostgreSQL · Prisma · Playwright</div>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+
+      <a class="proj" href="https://qlemi.se" rel="noopener">
+        <div class="mono tag"><span class="sv">Eget projekt</span><span class="en">Own project</span><span>2026</span></div>
+        <h3>Qlemi</h3>
+        <p class="sv">Röststyrd verktygslåda för författare. Lyssna på manuset, tryck på ett stycke, diktera om det och låt AI städa upp diktatet.</p>
+        <p class="en">Voice-first toolbox for writers. Listen to the manuscript, tap a paragraph, re-dictate it and let AI clean up the dictation.</p>
+        <p class="fact sv">Körs i Docker på egen server bakom nginx, deploy efter grön CI.</p>
+        <p class="fact en">Runs in Docker on my own server behind nginx, deploys after green CI.</p>
+        <div class="stack">FastAPI · React · PostgreSQL · Redis · Claude</div>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+    <p class="more">
+      <span class="mono"><span class="sv">Också byggt</span><span class="en">Also built</span></span>
+      <a href="https://trackone.se" rel="noopener">TrackOne</a><span class="sv">, bemanningsplattform för spårbunden trafik.</span><span class="en">, staffing platform for rail traffic.</span>
+      <a href="https://github.com/RedaEkengren/FreeSMS" rel="noopener">FreeSMS</a><span class="sv">, verkstadssystem som fungerar utan wifi.</span><span class="en">, shop management that works without wifi.</span>
+      <a href="https://hushroom.io" rel="noopener">Hushroom</a><span class="sv">, totalsträckskrypterade mötesrum.</span><span class="en">, end-to-end encrypted meeting rooms.</span>
+    </p>
+  </div>
+</section>
+
+<section id="kompetens">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono"><span class="sv">Kompetens</span><span class="en">Skills</span></span>
+        <h2><span class="sv">Verktygslådan</span><span class="en">The toolbox</span></h2>
+      </div>
+      <p class="sv">Det jag använder i produktion i dag, Windows-sidan från utbildningen och verkstadssidan som formade hur jag felsöker.</p>
+      <p class="en">What I use in production today, the Windows side from my studies, and the workshop side that shaped how I troubleshoot.</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill">
+        <span class="mono"><span class="sv">Moln och infrastruktur</span><span class="en">Cloud and infrastructure</span></span>
+        <div class="chips"><span>Linux (Ubuntu/Debian)</span><span>Google Cloud</span><span>Azure</span><span>DigitalOcean</span><span>Hetzner/VPS</span><span>Cloudflare</span><span>DNS</span><span class="sv">Nätverk</span><span class="en">Networking</span></div>
+      </div>
+      <div class="skill">
+        <span class="mono">DevOps</span>
+        <div class="chips"><span>Docker</span><span>GitHub Actions</span><span>CI/CD</span><span>GHCR</span><span>Terraform</span><span>Ansible</span><span>Trivy</span><span>gitleaks</span></div>
+      </div>
+      <div class="skill">
+        <span class="mono"><span class="sv">Automation, kod och AI</span><span class="en">Automation, code and AI</span></span>
+        <div class="chips"><span>Bash</span><span>PowerShell</span><span>Python (FastAPI, Django)</span><span>TypeScript/React</span><span>Go</span><span>Git</span><span>Playwright</span><span>OpenAI API</span><span class="sv">LLM-integrationer</span><span class="en">LLM integrations</span></div>
+      </div>
+      <div class="skill">
+        <span class="mono"><span class="sv">Data och säkerhet</span><span class="en">Data and security</span></span>
+        <div class="chips"><span>PostgreSQL</span><span>TimescaleDB</span><span>Row-level security</span><span>Secrets</span><span>TLS</span><span class="sv">Systemhärdning</span><span class="en">System hardening</span><span>Backup/DR</span><span>OWASP</span></div>
+      </div>
+      <div class="skill">
+        <span class="mono"><span class="sv">Windows och virtualisering</span><span class="en">Windows and virtualisation</span></span>
+        <div class="chips"><span>Windows Server</span><span>Active Directory</span><span>Microsoft 365</span><span>VMware</span><span>Hyper-V</span></div>
+      </div>
+      <div class="skill">
+        <span class="mono"><span class="sv">Fordon och el</span><span class="en">Vehicles and electrics</span></span>
+        <div class="chips"><span class="sv">Diagnosverktyg</span><span class="en">Diagnostic tools</span><span class="sv">Högspänning</span><span class="en">High voltage</span><span class="sv">Elsäkerhet</span><span class="en">Electrical safety</span><span class="sv">Styr- och övervakningssystem</span><span class="en">Control and monitoring systems</span><span class="sv">MIG-svetsning</span><span class="en">MIG welding</span><span class="sv">Riskanalys</span><span class="en">Risk analysis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="utbildning" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono"><span class="sv">Utbildning</span><span class="en">Education</span></span>
+        <h2><span class="sv">Två examina, två yrken</span><span class="en">Two diplomas, two trades</span></h2>
+      </div>
+      <p class="sv">Två yrkeshögskoleexamina, båda på SeQF-nivå 5, båda med Väl godkänt i åtta av nio kurser. Examensbevisen skickar jag gärna på begäran.</p>
+      <p class="en">Two Higher Vocational Education Diplomas, both at EQF level 5, both with Pass with distinction in eight of nine courses. I am happy to send the diplomas on request.</p>
+    </div>
+
+    <div class="edu-grid">
+      <article class="dip it">
+        <span class="mono">EC Utbildning · 2024-2026</span>
+        <h3><span class="sv">Cloud- och infrastrukturspecialist</span><span class="en">Cloud and Infrastructure Specialist</span></h3>
+        <p class="school"><span class="sv">Yrkeshögskoleexamen, utfärdad 2026-07-06</span><span class="en">Higher Vocational Education Diploma, issued 2026-07-06</span></p>
+        <div class="sum">
+          <div><b>420</b><span><span class="sv">YH-poäng</span><span class="en">HVE credits</span></span></div>
+          <div><b>8 / 9</b><span><span class="sv">kurser med VG</span><span class="en">courses with distinction</span></span></div>
+          <div><b>24 <span class="sv">v</span><span class="en">wk</span></b><span><span class="sv">praktik (LIA)</span><span class="en">work placement</span></span></div>
+        </div>
+        <table>
+          <thead><tr><th><span class="sv">Kurs</span><span class="en">Course</span></th><th><span class="sv">Poäng</span><span class="en">Credits</span></th><th><span class="sv">Betyg</span><span class="en">Grade</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="sv">Nätverk</span><span class="en">Networking</span></td><td>35</td><td>G</td></tr>
+            <tr><td>Linux</td><td>30</td><td>VG</td></tr>
+            <tr><td>M365 Cloud Services</td><td>25</td><td>VG</td></tr>
+            <tr><td>Cloud Services</td><td>35</td><td>VG</td></tr>
+            <tr><td><span class="sv">Serveradministration</span><span class="en">Server administration</span></td><td>50</td><td>VG</td></tr>
+            <tr><td><span class="sv">Virtualisering</span><span class="en">Virtualisation</span></td><td>60</td><td>VG</td></tr>
+            <tr><td><span class="sv">IT-säkerhet</span><span class="en">IT security</span></td><td>35</td><td>VG</td></tr>
+            <tr><td><span class="sv">Examensarbete</span><span class="en">Degree project</span></td><td>30</td><td>VG</td></tr>
+            <tr><td><span class="sv">LIA (praktik)</span><span class="en">Work placement</span></td><td>120</td><td>VG</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><span class="sv">G = Godkänt, VG = Väl godkänt (högsta betyg).</span><span class="en">G = Pass, VG = Pass with distinction (highest grade).</span></p>
+      </article>
+
+      <article class="dip f">
+        <span class="mono">YrkesAkademin · 2020-2022</span>
+        <h3><span class="sv">Kvalificerad fordonstekniker el/hybrid</span><span class="en">Qualified EV/hybrid vehicle technician</span></h3>
+        <p class="school"><span class="sv">Yrkeshögskoleexamen, utfärdad 2022-06-09</span><span class="en">Higher Vocational Education Diploma, issued 2022-06-09</span></p>
+        <div class="sum">
+          <div><b>300</b><span><span class="sv">YH-poäng</span><span class="en">HVE credits</span></span></div>
+          <div><b>8 / 9</b><span><span class="sv">kurser med VG</span><span class="en">courses with distinction</span></span></div>
+          <div><b>16 <span class="sv">v</span><span class="en">wk</span></b><span><span class="sv">praktik (LIA)</span><span class="en">work placement</span></span></div>
+        </div>
+        <table>
+          <thead><tr><th><span class="sv">Kurs</span><span class="en">Course</span></th><th><span class="sv">Poäng</span><span class="en">Credits</span></th><th><span class="sv">Betyg</span><span class="en">Grade</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="sv">Introduktion till elfordon</span><span class="en">Introduction to electric vehicles</span></td><td>20</td><td>VG</td></tr>
+            <tr><td><span class="sv">Tillämpad matematik</span><span class="en">Applied mathematics</span></td><td>15</td><td>VG</td></tr>
+            <tr><td><span class="sv">Komponentkännedom</span><span class="en">Component knowledge</span></td><td>25</td><td>VG</td></tr>
+            <tr><td><span class="sv">El, elektronik och elintegration i fordon</span><span class="en">Electrics, electronics and electrical integration in vehicles</span></td><td>55</td><td>VG</td></tr>
+            <tr><td><span class="sv">Säkert arbete på och i elfordon</span><span class="en">Safe work on and in electric vehicles</span></td><td>25</td><td>VG</td></tr>
+            <tr><td><span class="sv">Fordons delsystem, integration el/elhybrid</span><span class="en">Vehicle subsystems, EV/hybrid integration</span></td><td>40</td><td>VG</td></tr>
+            <tr><td><span class="sv">Elektroniska styr- och övervakningssystem</span><span class="en">Electronic control and monitoring systems</span></td><td>20</td><td>VG</td></tr>
+            <tr><td><span class="sv">LIA, praktiskt arbete med el/elhybridfordon</span><span class="en">Work placement, EV/hybrid vehicles</span></td><td>80</td><td>VG</td></tr>
+            <tr><td><span class="sv">Examensarbete, kvalitet och förbättring</span><span class="en">Degree project, quality and improvement</span></td><td>20</td><td>G</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><span class="sv">G = Godkänt, VG = Väl godkänt (högsta betyg).</span><span class="en">G = Pass, VG = Pass with distinction (highest grade).</span></p>
+      </article>
+    </div>
+
+    <div class="extras">
+      <div class="skill">
+        <span class="mono"><span class="sv">Språk</span><span class="en">Languages</span></span>
+        <div class="chips">
+          <span><span class="sv">Svenska, modersmål</span><span class="en">Swedish, native</span></span>
+          <span><span class="sv">Engelska, flytande</span><span class="en">English, fluent</span></span>
+          <span><span class="sv">Arabiska</span><span class="en">Arabic</span></span>
+        </div>
+      </div>
+      <div class="skill">
+        <span class="mono"><span class="sv">Körkort</span><span class="en">Driving licence</span></span>
+        <div class="chips"><span>B</span><span>D1</span><span>D</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="omdomen">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="mono"><span class="sv">Omdömen</span><span class="en">References</span></span>
+        <h2><span class="sv">Vad kunderna säger</span><span class="en">What clients say</span></h2>
+      </div>
+      <p class="sv">Två av kunderna jag har levererat till genom Benbo.</p>
+      <p class="en">Two of the clients I have delivered to through Benbo.</p>
+    </div>
+    <div class="quotes">
+      <figure>
+        <blockquote class="sv">Resultatet var fantastiskt och än bättre var vägen dit. Lyhörda, snabba och lösningsfokuserade.</blockquote>
+        <blockquote class="en">The result was fantastic, and the process getting there was even better. Responsive, fast, and solutions-focused.</blockquote>
+        <figcaption><b>Fredrik Strand</b>, Alkama AB</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="sv">Reda har varit snabb, professionell och väldigt lösningsorienterad genom hela processen. Jag kan varmt rekommendera Reda till alla.</blockquote>
+        <blockquote class="en">Reda was fast, professional and very solutions-oriented throughout the process. I warmly recommend Reda to anyone.</blockquote>
+        <figcaption><b>Baker Kassem</b>, <span class="sv">medgrundare, Drive4Free</span><span class="en">co-founder, Drive4Free</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="kontakt">
+  <div class="wrap">
+    <h2 class="sv">Behöver ni någon som <em>hittar felet</em> och ser till att det inte kommer tillbaka?</h2>
+    <h2 class="en">Need someone who <em>finds the fault</em> and makes sure it does not come back?</h2>
+    <p class="lede sv">Jag är öppen för roller inom Linux, drift och cloud operations i Stockholm eller på distans, och tar konsultuppdrag genom mitt bolag <a href="https://benbo.se">Benbo</a>.</p>
+    <p class="lede en">I am open to roles in Linux, operations and cloud operations in Stockholm or remote, and take consulting work through my company <a href="https://benbo.se">Benbo</a>.</p>
+    <div class="links">
+      <a href="mailto:redaekengren@protonmail.com"><span class="mono"><span class="sv">Anställning</span><span class="en">Employment</span></span><b>redaekengren@protonmail.com</b></a>
+      <a href="mailto:reda@benbo.se"><span class="mono"><span class="sv">Konsultuppdrag</span><span class="en">Consulting</span></span><b>reda@benbo.se</b></a>
+      <a href="https://www.linkedin.com/in/reda-karl-ekengren-b2a05623b/" rel="me noopener"><span class="mono">LinkedIn</span><b>Reda Ekengren</b></a>
+      <a href="https://github.com/RedaEkengren" rel="me noopener"><span class="mono">GitHub</span><b>RedaEkengren</b></a>
+    </div>
+    <div class="foot">
+      <span>© 2026 Reda Ekengren · Stockholm</span>
+      <span class="noprint"><span class="sv">Inga cookies, ingen spårning, inga externa anrop.</span><span class="en">No cookies, no tracking, no external requests.</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      root.dataset.lang = b.dataset.set;
+      root.lang = b.dataset.set;
+      try { localStorage.setItem("cv-lang", b.dataset.set); } catch (e) {}
+    });
+  });
+  document.getElementById("print").addEventListener("click", function () { window.print(); });
+})();
+</script>
+</body>
+</html>
